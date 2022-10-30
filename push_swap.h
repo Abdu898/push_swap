@@ -6,7 +6,7 @@
 /*   By: ashahin <ashahin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:36:23 by ashahin           #+#    #+#             */
-/*   Updated: 2022/10/29 07:37:11 by ashahin          ###   ########.fr       */
+/*   Updated: 2022/10/30 06:02:41 by ashahin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,13 @@ void	sendup_pushb(t_list **stack_a, t_list **stack_b, t_list **smallest);
 t_list	*lst_smallest_index(t_list **stack_a);
 void	push_smallest2_b(t_list **stack_a, t_list **stack_b);
 void	sort_5(t_list **stack_a, t_list **stack_b);
+//
+void	ft_lst_index(t_list **stack);
+int		ft_max_bits(t_list *stack);
+void	push_swap(t_list **stack_a, t_list **stack_b);
 
 //
 t_list	*create_stack_a(int length, char **argv);
+void	ft_free_stack(t_list **stack);
 
 #endif
