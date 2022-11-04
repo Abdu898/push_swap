@@ -6,7 +6,7 @@
 /*   By: ashahin <ashahin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:36:23 by ashahin           #+#    #+#             */
-/*   Updated: 2022/11/04 00:09:43 by ashahin          ###   ########.fr       */
+/*   Updated: 2022/11/04 04:09:32 by ashahin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ t_list	*create_stack_a(int length, char **argv);
 void	ft_free_stack(t_list **stack);
 void	ft_lst_index(t_list **stack);
 char	*ft_strjoin_ps(char *s1, char *s2);
+void	free_op(char **op_list);
 
 //operations_b.c
 int		swap_check(t_list **stack);
@@ -85,6 +86,5 @@ int		ft_get_move1(t_list **stack_a, t_list **stack_b, char *move);
 int		ft_get_move(t_list **stack_a, t_list **stack_b, char *move);
 char	**ft_check_moves(t_list **stack_a, t_list **stack_b);
 int		ft_check_sorted(t_list **stack_a, t_list **stack_b);
-void	free_op(char **op_list);
 
 #endif

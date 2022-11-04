@@ -6,7 +6,7 @@
 /*   By: ashahin <ashahin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:52:48 by ashahin           #+#    #+#             */
-/*   Updated: 2022/11/04 02:25:54 by ashahin          ###   ########.fr       */
+/*   Updated: 2022/11/04 04:11:41 by ashahin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ int	main(int argc, char **argv)
 	if (op_list)
 		ft_check_sorted(&stack_a, &stack_b);
 	if (op_list)
-		free(op_list);
+		free_op(op_list);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);
