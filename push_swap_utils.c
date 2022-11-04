@@ -6,7 +6,7 @@
 /*   By: ashahin <ashahin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 00:28:06 by ashahin           #+#    #+#             */
-/*   Updated: 2022/10/30 08:37:38 by ashahin          ###   ########.fr       */
+/*   Updated: 2022/11/04 00:03:47 by ashahin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,18 @@ t_list	*lst_smallest_index(t_list **stack_a)
 		i++;
 	}
 	return (smallest);
+}
+
+int	ft_compstr(char	*s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (((unsigned char *) s1)[i] != ((unsigned char *) s2)[i])
+			return (((unsigned char *) s1)[i] - ((unsigned char *) s2)[i]);
+		i++;
+	}
+	return (((unsigned char *) s1)[i] - ((unsigned char *) s2)[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: ashahin <ashahin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 23:04:58 by ashahin           #+#    #+#             */
-/*   Updated: 2022/10/29 07:36:57 by ashahin          ###   ########.fr       */
+/*   Updated: 2022/11/03 23:56:25 by ashahin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 void	sort_cases(t_list **stack_a, int *a)
 {
 	if (a[0] > a[1] && a[0] < a[2] && a[1] < a[2])
-		swap(stack_a, 'a');
+		sa(stack_a);
 	else if (a[0] > a[1] && a[0] > a[2] && a[1] < a[2])
-		rotate(stack_a, 'a');
+		ra(stack_a);
 	else if (a[0] < a[1] && a[0] > a[2] && a[1] > a[2])
-		rev_rotate(stack_a, 'a');
+		rra(stack_a);
 	else if (a[1] > a[2])
 	{
-		swap(stack_a, 'a');
+		sa(stack_a);
 		if (a[0] < a[1] && a[0] < a[2])
-			rotate(stack_a, 'a');
+			ra(stack_a);
 		else if (a[0] > a[1] && a[0] > a[2])
-			rev_rotate(stack_a, 'a');
+			rra(stack_a);
 	}
 }
 
@@ -50,24 +50,22 @@ void	sort_3(t_list **stack_a)
 /*chooses the way to send up through ra or rra the pb*/
 void	sendup_pushb(t_list **stack_a, t_list **stack_b, t_list **smallest)
 {
-	t_list	*tmp;
 	int		i;
 
-	tmp = *stack_a;
 	i = (*smallest)->index;
 	if ((*smallest)->index >= 2)
 	{
 		if (ft_lstsize(*stack_a) == 4)
 			i++;
 		while (i++ <= 4)
-			rev_rotate(stack_a, 'a');
-		push(stack_b, stack_a, 'b');
+			rra(stack_a);
+		pb(stack_b, stack_a);
 	}
 	else
 	{
 		while (i-- > 0)
-			rotate(stack_a, 'a');
-		push(stack_b, stack_a, 'b');
+			ra(stack_a);
+		pb(stack_b, stack_a);
 	}
 }
 
@@ -95,7 +93,7 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 	if (lstsize <= 3)
 	{
 		if (lstsize == 2)
-			swap(stack_a, 'a');
+			sa(stack_a);
 		else
 			sort_3(stack_a);
 		return ;
@@ -103,5 +101,5 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 	push_smallest2_b(stack_a, stack_b);
 	sort_3(stack_a);
 	while (ft_lstsize(*stack_b))
-		push(stack_a, stack_b, 'a');
+		pa(stack_a, stack_b);
 }
