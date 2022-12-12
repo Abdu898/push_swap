@@ -8,6 +8,7 @@ it takes a set of integer values via standard input, 2 stacks, and a set of inst
 it's writen in C, will calculates and displays on the standard output the smallest program, made of Push swap language instructions, that sorts the integers received as arguments.
 
 ## discription
+i used radix 
 
 ## Rules
 * You have 2 stacks named a and b.
