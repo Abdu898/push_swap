@@ -50,7 +50,7 @@ If the original stacks look like this
 where d = floor(log_b(k) + 1) for base = b.
 
 check this video explaining Radix sort.
-https://www.youtube.com/watch?v=nu4gDuFabIM&feature=emb_title
+[Radix Sort | GeeksforGeeks](https://www.youtube.com/watch?v=nu4gDuFabIM&feature=emb_title)
 
 ## checker
 this "checker" program Executes the sorting instructions and checks if the values are sorted or not and displas on the standard output "OK\n" or "KO\n"
