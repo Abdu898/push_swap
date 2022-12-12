@@ -8,7 +8,15 @@ it takes a set of integer values via standard input, 2 stacks, and a set of inst
 it's writen in C, will calculates and displays on the standard output the smallest program, made of Push swap language instructions, that sorts the integers received as arguments.
 
 ## discription
-i used radix 
+First, we start with two stacks called A and B.
+A is filled with some random integers (without duplicate) and B is empty. We can perform certain instructions on these stacks,
+and the goal is to sort all these integers with the least instructions possible.
+If the original stacks look like this
+
+## Skills
+* structures
+* sorting algorithms
+* Bitwise operators
 
 ## Rules
 * You have 2 stacks named a and b.
@@ -33,6 +41,17 @@ i used radix
 * rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
 * rrr : rra and rrb at the same time.
 
+##Algorithm
+* Step 1 : Parsing, put numbers in the stack A if no errors are detected
+* Step 2 : Check with  check_sorted() function if the numbers in A are all sorted. If so, end the program without printing anything.
+* Step 3 : If the size of A ≤ 5, call function sort_5(). Else, call function push_swap() which uses the sorting algorithm : Radix sort.
+
+* Radix sort is an efficient algorithm to sort non-negative integers with time complexity O(n * d)
+where d = floor(log_b(k) + 1) for base = b.
+
+check this video explaining Radix sort.
+https://www.youtube.com/watch?v=nu4gDuFabIM&feature=emb_title
+
 ## checker
 this "checker" program Executes the sorting instructions and checks if the values are sorted or not and displas on the standard output "OK\n" or "KO\n"
 accordingly
@@ -44,24 +63,39 @@ accordingly
 
 
 ## Expamples for running
-$>./push_swap 2 1 3 6 5 8 sa
-pb pb
-pb sa
-pa pa
-pa
+
+This is how it should look like when we run our program
+
+![1*HnhUPGIafYrShJav9tkVug](https://user-images.githubusercontent.com/79362840/207142790-198ff989-661a-4d6d-b3dc-fc17759b89b3.png)
+
+Step by step, we can see these instructions really sort the numbers
+
+![image](https://user-images.githubusercontent.com/79362840/207143090-dfab5e7a-851a-463f-aa62-bd1499ef3d33.png)
+
 $>./push_swap 0 one 2 3
+
 Error $>
 
 ## Examples for the Checker program
+
 $>./checker 3 2 1 0 rra
+
 pb sa
+
 rra pa
+
 OK
+
 $>./checker 3 2 1 0
+
 sa rra
+
 pb KO
+
 $>./checker 3 2 one 0 Error
+
 $>./checker "" 1 Error
+
 $>
 
 
